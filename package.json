@@ -33,6 +33,7 @@
     "chart.js": "^3.5.1",
     "core-js": "^3.29.1",
     "css-loader": "^6.7.3",
+    "element-ui": "^2.15.6",
     "google-auth-library": "^8.1.1",
     "google-one-tap": "^1.0.6",
     "jquery": "^3.6.0",

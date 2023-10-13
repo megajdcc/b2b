@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import { ToastPlugin, ModalPlugin } from 'bootstrap-vue'
-
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import lang from 'element-ui/lib/locale/lang/es';
+import locale from 'element-ui/lib/locale';
 import '@/assets/scss/app.scss'
 Vue.prototype.$eventHub = new Vue();
 
@@ -36,7 +39,7 @@ moment.locale('es')
 // BSV Plugin Registration
 Vue.use(ToastPlugin)
 Vue.use(ModalPlugin)
-
+Vue.use(ElementUI);
 import '@core/assets/fonts/feather/iconfont.css'
 import '@core/scss/core.scss'
 import '@/assets/scss/style.scss'

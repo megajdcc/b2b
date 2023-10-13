@@ -82,7 +82,7 @@ define(['./workbox-012c2241'], (function (workbox) { 'use strict';
     "revision": "3ca0b8505b4bec776b69afdba2768812"
   }, {
     "url": "index.html",
-    "revision": "0.99lp1i3b3qg"
+    "revision": "0.mjv79gsdp1g"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {
@@ -90,7 +90,7 @@ define(['./workbox-012c2241'], (function (workbox) { 'use strict';
   }));
   workbox.registerRoute(({
     url
-  }) => ["https://b2b.dev", "https://videos.grupodrosur.com"].includes(url.origin), new workbox.CacheFirst({
+  }) => ["https://b2b.dev", "https://videos.grupodrosur.com", "https://megajdcc.github.io/b2b"].includes(url.origin), new workbox.CacheFirst({
     "cacheName": "api-cache",
     plugins: [new workbox.ExpirationPlugin({
       maxAgeSeconds: 2592000

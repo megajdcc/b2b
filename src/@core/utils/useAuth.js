@@ -74,7 +74,6 @@ export default function useAuth(){
                   if(data.success){
                      axios.defaults.headers.common = { 'Authorization': `Bearer ${data.token}` }
 
-                     store.commit('setAuthMessage', null);
                      store.commit('usuario/cargarUser', {nombre:data.nombre,avatar:data.avatar});
                      store.commit('setToken', data.token);
 
@@ -189,7 +188,6 @@ export default function useAuth(){
 
          axios.defaults.headers.common = { 'Authorization': `Bearer ${data.accessToken}` }
          
-         store.commit('setAuthMessage', null);
          store.commit('usuario/cargarUser', data.usuario);
          store.commit('setToken', data.accessToken);
 

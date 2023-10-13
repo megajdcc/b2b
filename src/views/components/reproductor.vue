@@ -1,7 +1,7 @@
 <template>
   <b-card ref="contentVideo" class="w-100 " no-body style="height:85vh; cursor:pointer" bg-variant="dark" @click="play()">
     
-      <vimeo-player loop :video-id="video.id" ref="refVideo" v-if="video.id" style="width:100% !important" @ended="cambiarVideo()" :controls="true" :player-width="width" :player-height="height">
+      <vimeo-player loop="false" :video-id="video.id" ref="refVideo" v-if="video.id" style="width:100% !important" @ended="cambiarVideo()" :controls="true" :player-width="width" :player-height="height">
 
       </vimeo-player>
     
@@ -58,17 +58,13 @@ export default {
 
     const play = _.debounce(() => {
       refVideo.value.play();
-    },1000)
+    },500)
 
     const obtenerVideoId = (urlCompleta)  => {
-      // Buscar el ID del video en la URL utilizando una expresión regular
       const match = urlCompleta.match(/\/(\d+)\?/);
-
       if (match && match[1]) {
-        // El ID del video se encuentra en el primer grupo coincidente
         return match[1];
       } else {
-        // Si no se encuentra un ID válido, devuelve null o una cadena vacía, según prefieras
         return null;
       }
     }
