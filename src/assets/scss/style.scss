@@ -223,14 +223,14 @@ strong{
    .layout-travel {
      
 
-      max-width: $max_width_travel;
+      // max-width: $max_width_travel;
       margin-left: auto;
       margin-right: auto;
       // position: relative;
       .header-navbar{
          left: auto;
          right: auto;
-         max-width: $max_width_travel;
+         // max-width: $max_width_travel;
       }
 
    }
