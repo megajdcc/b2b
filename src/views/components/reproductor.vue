@@ -1,9 +1,10 @@
 <template>
-  <b-card ref="contentVideo" class="w-100 " no-body style="height:85vh; cursor:pointer" bg-variant="dark" @click="play()">
-    
-      <vimeo-player loop="false" :video-id="video.id" ref="refVideo" v-if="video.id" style="width:100% !important" @ended="cambiarVideo()" :controls="true" :player-width="width" :player-height="height">
+  <b-card ref="contentVideo" class="w-100 v-dark " no-body style="height:85vh; cursor:pointer"  @click="play()">
 
+    <section v-for="(video, i) in videos"  :key="i">
+      <vimeo-player autoplay :loop="false" :video-id="video" ref="refVideo" v-if="i == indexV" style="width:100% !important" @ended="cambiarVideo()" :controls="false" :player-width="width" :player-height="height">
       </vimeo-player>
+    </section>
     
   </b-card>
 </template>
@@ -57,7 +58,7 @@ export default {
     }
 
     const play = _.debounce(() => {
-      refVideo.value.play();
+      // refVideo.value.play();
     },500)
 
     const obtenerVideoId = (urlCompleta)  => {
@@ -110,9 +111,16 @@ export default {
       cambiarVideo,
       contentVideo,
       width, height,
-      play
+      play,
+      indexV
     }
   }
  
 }
 </script>
+
+<style lang="scss">
+  .v-dark{
+    background-color: rgba(0, 0, 0, 0.823) !important;
+  }
+</style>
