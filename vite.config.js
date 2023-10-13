@@ -14,7 +14,8 @@ import fs  from 'node:fs'
 const host = 'b2b.dev'
 
 export default defineConfig({
-    base:import.meta.env === 'production' ? '/b2b/' : './',
+    // base:import.meta.env === 'production' ? '/b2b/' : './',
+    base:'./',
     // server:{
     //   host:host,
     //   port:5173,
