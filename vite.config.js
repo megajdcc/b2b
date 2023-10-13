@@ -6,24 +6,24 @@ import { VitePWA } from 'vite-plugin-pwa'
 import https from 'node:https'
 import fs  from 'node:fs'
 
-const options = {
-  key: fs.readFileSync('/home/megajdcc/jdcc/certificados/b2b.key'),
-  cert: fs.readFileSync('/home/megajdcc/jdcc/certificados/b2b.crt')
-}
+// const options = {
+//   key: fs.readFileSync('/home/megajdcc/jdcc/certificados/b2b.key'),
+//   cert: fs.readFileSync('/home/megajdcc/jdcc/certificados/b2b.crt')
+// }
 
 const host = 'b2b.dev'
 
 export default defineConfig({
     base:import.meta.env === 'production' ? '/b2b/' : './',
-    server:{
-      host:host,
-      port:5173,
-      https:https.createServer(options,(req,res) => {
-        res.writeHead(200);
-        res.end('hello world\n');
-      }).listen(8001),
-      open:true,
-    },
+    // server:{
+    //   host:host,
+    //   port:5173,
+    //   https:https.createServer(options,(req,res) => {
+    //     res.writeHead(200);
+    //     res.end('hello world\n');
+    //   }).listen(8001),
+    //   open:true,
+    // },
 
     plugins: [
       vue(),
@@ -150,7 +150,7 @@ export default defineConfig({
             maximumFileSizeToCacheInBytes:2097152 * 6,
             globIgnores: ["**\\/node_modules\\/**\\/*","**\\/*.{php}"],
             runtimeCaching:[{
-                urlPattern: ({url}) => ['https://b2b.dev','https://videos.grupodrosur.com'].includes(url.origin),
+                urlPattern: ({url}) => ['https://b2b.dev','https://videos.grupodrosur.com','https://megajdcc.github.io/b2b'].includes(url.origin),
                 handler: 'CacheFirst',
                 options: {
                     cacheName: 'api-cache',
