@@ -1,7 +1,7 @@
 <template>
   <b-card ref="contentVideo" class="w-100 " no-body style="height:85vh; cursor:pointer" bg-variant="dark" @click="play()">
     
-      <vimeo-player :video-id="video.id" ref="refVideo" v-if="video.id" style="width:100% !important" @ended="cambiarVideo()" :controls="false" :player-width="width" :player-height="height">
+      <vimeo-player :video-id="video.id" ref="refVideo" v-if="video.id" style="width:100% !important" @ended="cambiarVideo()" :controls="true" :player-width="width" :player-height="height">
 
       </vimeo-player>
     
@@ -57,10 +57,7 @@ export default {
     }
 
     const play = _.debounce(() => {
-     
-      console.log(refVideo.value)
       refVideo.value.play();
-      
     },500)
 
     const obtenerVideoId = (urlCompleta)  => {

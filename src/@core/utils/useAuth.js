@@ -41,7 +41,7 @@ export default function useAuth(){
          
 
          router.push({name:'login'})
-
+         window.location.reload();
       }).catch(e => {
          if(e.response.status === 419 ){
             router.push({name:'login'})
