@@ -19,7 +19,7 @@ const router = new VueRouter({
   
   mode: 'history',
   // base: import.meta.env.BASE_URL,
-  base:import.meta.env === 'production' ? '/b2b' : import.meta.env.BASE_URL,
+  base:'/b2b',
   scrollBehavior : (to,from,savePosition)  => {
 
     if(savePosition){
