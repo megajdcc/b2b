@@ -39,7 +39,7 @@ import downImg from '@/assets/images/pages/under-maintenance.svg'
 import {computed,toRefs} from 'vue';
 import downImgDark from '@/assets/images/pages/under-maintenance-dark.svg';
 import logotipo from 'images/logos/logotipo.png'
-import logotipoblanco from 'images/logos/logotipoblanco.png'
+import logotipoblanco from 'images/logos/logotipowhite.png'
 
 export default {
   components: {

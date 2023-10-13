@@ -50,7 +50,6 @@ export default {
           videos.value = currentPlayList.map(v => obtenerVideoId(v))
           cantVideos.value = videos.value.length
           insertarVideo()
-          // play()
         }
 
       }).catch(e => console.log(e))
@@ -61,6 +60,7 @@ export default {
      
       console.log(refVideo.value)
       refVideo.value.play();
+      
     },500)
 
     const obtenerVideoId = (urlCompleta)  => {

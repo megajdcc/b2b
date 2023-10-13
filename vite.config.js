@@ -14,7 +14,7 @@ const options = {
 const host = 'b2b.dev'
 
 export default defineConfig({
-    base:'/',
+    base:import.meta.env === 'production' ? '/b2b/' : './',
     server:{
       host:host,
       port:5173,
